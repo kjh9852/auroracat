@@ -128,13 +128,13 @@ function initFilter() {
 			if (background && item.attributes.Background !== background) {
 				return false;
 			}
-			if (special && item.attributes.Fur !== fur) {
+			if (fur && item.attributes.Fur !== fur) {
 				return false;
 			}
-			if (background && item.attributes.Eyes !== eyes) {
+			if (eyes && item.attributes.Eyes !== eyes) {
 				return false;
 			}
-			if (clothes && item.attributes.Item !== items) {
+			if (items && item.attributes.Item !== items) {
 				return false;
 			}
 			if (id && item.name !== id) {
