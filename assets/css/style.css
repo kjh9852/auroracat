@@ -15,7 +15,11 @@ header {
 nav {
     position: relative;
 }
-.container {}
+.container {
+    overflow: hidden;
+    position: relative;
+    height: 250vh;
+}
 .nav {
     position: absolute;
     width: 30%;
@@ -146,11 +150,6 @@ body {
     z-index: 1000;
     user-select: none;
     pointer-events: none;
-}
-.container {
-    overflow: hidden;
-    position: relative;
-    height: 200vh;
 }
 body.on .first_scene {
     display: none;
@@ -407,7 +406,7 @@ body.on .rocket img {
 .planet-stroy .red {
     position: absolute;
     width: 87px;
-    top: 675px;
+    top: 800px;
     left: 950px;
 }
 .planet-stroy .red > a {
@@ -540,6 +539,19 @@ body.on .scene01 .planet-stroy .pink > a {
     transition: .5s ease-in-out;
     transition-delay: 2.2s;
 }
+.gallery {
+    position: relative;
+    right: 0;
+    height: 435px;
+}
+.gallery_planet {
+    position: absolute;
+    top: 00px;
+    right: 20px;
+}
+.gallery_planet a > img {
+    width: 300px;
+}
 body.on .scene01 .planet-stroy02 .mars > a,
 body.on .scene01 .planet-stroy02 .blue > a,
 body.on .scene01 .planet-stroy02 .saturns > a {
@@ -557,7 +569,22 @@ body.on .scene01 .planet-stroy02 .blue > a {
     -webkit-animation: updown 5s alternate infinite;
     -moz-animation: updown 5s alternate infinite;
     -o-animation: updown 5s alternate infinite;
-    animation-delay: 1s;
+    animation-delay: 3.2s;
+}
+.gallery .gallery_planet > a {
+    position: relative;
+    display: block;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    transition-delay: 3s;
+}
+body.on .gallery .gallery_planet > a {
+    transform: scale(1);
+    animation: updown 5s alternate infinite;
+    -webkit-animation: updown 5s alternate infinite;
+    -moz-animation: updown 5s alternate infinite;
+    -o-animation: updown 5s alternate infinite;
+    animation-delay: 5s;
 }
 /* planet-stroy02 */
 .mobile_view {
@@ -599,7 +626,8 @@ body.on .scene01 .planet-stroy02 .blue > a {
     font-family: 'HANSIP';
 }
 .mobile_view .view_desc p {
-    width: 80%;
+    margin-top: 10px;
+    width: 90%;
 }
 .view_desc {
     display: flex;
@@ -851,7 +879,7 @@ body.on .scene01 .planet-stroy02 .blue > a {
     width: 100%;
     height: 100vh;
     background: url(../img/star02.png) no-repeat;
-    background-size: cover;
+    background-size: 100%;
     animation: blur 5s infinite;
     z-index: 1;
 }
@@ -875,4 +903,31 @@ body.on .scene01 .planet-stroy02 .blue > a {
 .blurout {
     animation: fadeoutblur 1s ease-in-out;
     animation-fill-mode: forwards;
+}
+
+.gallery_view {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 99;
+}
+.gallery_view.on {
+    opacity: 1;
+    visibility: visible;
+}
+iframe {
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    border: none;
+    height: 90vh;
+    width: 90vw;
+    border-radius: 10px;
 }

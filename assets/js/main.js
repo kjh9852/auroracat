@@ -16,6 +16,9 @@
   const mSaturnsClose = document.querySelector('.planet-stroy02 > .saturns > .mobile_view .close');
   const mBluePreview = document.querySelector('.planet-stroy02 > .blue > .mobile_view');
   const mBlueClose = document.querySelector('.planet-stroy02 > .blue > .mobile_view .close');
+  const gallery = document.querySelector(".gallery_planet > a");
+  const galleryView = document.querySelector(".gallery_view");
+  const galleryClose = document.querySelector('.gallery_view .close');
 
   var mobile = (/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera);
 
@@ -130,28 +133,40 @@
     cursor.style.top = e.pageY + "px";
   }
 
+  function galleryOpen() {
+    gallery.addEventListener('click', (e) => {
+      e.preventDefault();
+      galleryView.classList.add('on');
+    });
+    galleryClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      galleryView.classList.remove('on');
+    });
+  }
+
+  if(mobile) {
+    saturns.addEventListener('click', (e) => {
+      e.preventDefault();
+      mSaturnsPreview.classList.add('on');
+    });
+    mSaturnsClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      mSaturnsPreview.classList.remove('on');
+    });
+    blue.addEventListener('click', (e) => {
+      e.preventDefault();
+      mBluePreview.classList.add('on');
+    });
+    mBlueClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      mBluePreview.classList.remove('on');
+    });
+  } 
   window.addEventListener('load', () => {
-    if(mobile) {
-      saturns.addEventListener('click', (e) => {
-        e.preventDefault();
-        mSaturnsPreview.classList.add('on');
-      });
-      mSaturnsClose.addEventListener('click', (e) => {
-        e.preventDefault();
-        mSaturnsPreview.classList.remove('on');
-      });
-      blue.addEventListener('click', (e) => {
-        e.preventDefault();
-        mBluePreview.classList.add('on');
-      });
-      mBlueClose.addEventListener('click', (e) => {
-        e.preventDefault();
-        mBluePreview.classList.remove('on');
-      });
-    } 
     mainScroll();
     preview(saturns, saturnsView, preViewWrap, close);
     preview(blue, blueView, preViewWrap, close);
+    galleryOpen();
   });
 
 })();

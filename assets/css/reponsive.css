@@ -11,6 +11,10 @@
     }
 }
 @media (max-width:1200px) {
+    .gallery_container {
+        max-width: 960px;
+        padding: 0;
+    }
     .scene01 {
         max-width: 960px;
     }
@@ -28,6 +32,52 @@
         100% {
             transform: translate(230%,-100%);
         }
+    }
+}
+@media (max-width :990px) {
+    .gallery_container {
+        max-width: 720px;
+    }
+    .filter_title h2 {
+        margin-bottom: 30px;
+    }
+    .filter_box {
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .filter_bg .color_item ul li div {
+        width: 100%;
+    }
+    .filter_bg .color_item select {
+        width: 100%;
+    }
+    .filter_bg .color_item {
+        width: 100%;
+    }
+    .filter_bg .color_item a {
+        width: 24%; height: 150px;
+    }
+    .filter_bg .color_item a:nth-child(4n) {
+        margin-right: 0;
+    }
+    .filter_box {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .item {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    .gallery {
+        padding-top: 50px;
+        flex: 0 0 100%;
+    }
+    .reset_btn {
+        margin-top: 10px;
+    }
+    .reset_btn > button {
+        width: 100%;
+        height: 90px;
     }
 }
 @media (max-width :960px) {
@@ -106,6 +156,14 @@
     }
 }
 @media (max-width:720px) {
+    .gallery_container {
+        max-width: 659px;
+        padding: 0;
+    }
+    .item {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
     .scene01 {
         max-width: 640px;
     }
@@ -114,7 +172,7 @@
     }
 }
 @media (max-width:640px) {
-    .nav {
+    .na.container {
         width: 100%;
     }
     .planet-stroy .red {
@@ -124,9 +182,6 @@
 @media (max-width: 460px) {
     body {
         cursor: auto;
-    }
-    .container {
-        height: 225vh;
     }
     .cursor {
         display: none;
@@ -229,6 +284,9 @@
     .planet-stroy02 .blue {
         width: 270px;
         top: 840px;
+    }
+    .gallery_planet {
+        top: 150px;
     }
     .earth {
         width: 100px;
